@@ -16,5 +16,4 @@ http:
     authmiddleware:
       forwardAuth:
         address: "http://auth:5000/auth"
-        authResponseHeaders:
-          - "X-Auth-User"  
+ 

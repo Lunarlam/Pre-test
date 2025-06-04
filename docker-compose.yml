@@ -1,6 +1,7 @@
 services:
   auth:
-    build: ./auth
+    build:
+      context: ./auth
     volumes:
       - ./auth/auth.py:/app/auth.py
     networks:
@@ -21,7 +22,7 @@ services:
       - "--log.level=INFO"
     ports:
       - "8080:80"
-      - "8081:8080" # optional dashboard
+      - "8081:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik.yml:/traefik.yml:ro
