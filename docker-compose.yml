@@ -8,7 +8,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.services.auth.loadbalancer.server.port=5000"
-      - "traefik.http.routers.auth.rule=PathPrefix(`/auth`) || PathPrefix(`/health`)"curl -H "x-pretest: wrong-token" http://localhost:8080
+      - "traefik.http.routers.auth.rule=PathPrefix(`/auth`) || PathPrefix(`/health`)"
       - "traefik.http.routers.auth.entrypoints=web"
 
   traefik:
