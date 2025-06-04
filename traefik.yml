@@ -1,0 +1,20 @@
+api:
+  dashboard: true
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  docker:
+    exposedByDefault: false
+  file:
+    filename: /traefik.yml
+
+http:
+  middlewares:
+    authmiddleware:
+      forwardAuth:
+        address: "http://auth:5000/auth"
+        authResponseHeaders:
+          - "X-Auth-User"  
